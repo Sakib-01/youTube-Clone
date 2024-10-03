@@ -73,46 +73,32 @@
     </header>
     <main>
       <!-- button  -->
-      <div class="flex justify-center gap-2 mt-10">
+      <div id="category-button" class="flex justify-center gap-2 mt-10">
         <button class="btn btn-outline">All</button>
-        <button class="btn btn-outline">Music</button>
-        <button class="btn btn-outline">Comedy</button>
-        <button class="btn btn-outline">Serial</button>
       </div>
       <!-- button  -->
 
       <!-- video section  -->
 
       <div
+        id="video-container"
         class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 mt-10 w-11/12 mx-auto"
       >
         <div class="card card-compact">
           <figure>
             <img
+              class="h-[210px] object-cover"
               src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
               alt="Shoes"
             />
           </figure>
-          <div class="card-body">
-            <h2 class="card-title">Shoes!</h2>
-            <p>If a dog chews shoes whose shoes does he choose?</p>
-            <div class="card-actions justify-end">
-              <button class="btn btn-primary">Buy Now</button>
+          <div class="flex gap-2 pt-2">
+            <div>
+              <img class="w-8 h-8 rounded-full border-2 py-2" src="" alt="" />
             </div>
-          </div>
-        </div>
-        <div class="card card-compact">
-          <figure>
-            <img
-              src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-              alt="Shoes"
-            />
-          </figure>
-          <div class="card-body">
-            <h2 class="card-title">Shoes!</h2>
-            <p>If a dog chews shoes whose shoes does he choose?</p>
-            <div class="card-actions justify-end">
-              <button class="btn btn-primary">Buy Now</button>
+            <div>
+              <h2 class="card-title">Shoes!</h2>
+              <p>If a dog chews shoes whose shoes does he choose?</p>
             </div>
           </div>
         </div>
@@ -120,5 +106,6 @@
       <!-- video section  -->
     </main>
     <footer></footer>
+    <script src="index.js"></script>
   </body>
 </html>
