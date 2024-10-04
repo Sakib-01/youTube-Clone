@@ -24,17 +24,19 @@
         },
       };
     </script>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <header>
       <!-- navbar -->
-      <div class="navbar bg-base-100 w-11/12 py-8 mx-auto">
-        <div class="navbar-start w-1/3">
+      <div class="navbar bg-base-100 w-11/12 py-8 mx-auto items-center">
+        <div class="navbar-start w-1/3 mr-8">
           <img class="w-8 h-8" src="./assists/youtube_1384060.png" alt="" />
           <a class="btn btn-ghost text-2xl">YouTube</a>
         </div>
         <div class="w-full">
           <input
+            id="search"
             type="text"
             placeholder="Search"
             class="input input-bordered input-error w-full"
@@ -74,7 +76,7 @@
     <main>
       <!-- button  -->
       <div id="category-button" class="flex justify-center gap-2 mt-10">
-        <button class="btn btn-outline">All</button>
+        <button onclick="loadVides()" class="btn btn-outline">All</button>
       </div>
       <!-- button  -->
 

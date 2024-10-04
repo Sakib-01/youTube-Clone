@@ -1,0 +1,8 @@
+.active {
+  background-color: rgb(
+    228,
+    127,
+    127
+  ); /* Or use Tailwind classes like bg-red-500 */
+  color: white; /* To ensure text is readable */
+}

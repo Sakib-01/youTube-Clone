@@ -12,19 +12,50 @@ function loadVides() {
     .then((data) => showVideo(data.videos))
     .catch((err) => console.log(err));
 }
+function searchVides(id) {
+  fetch(
+    `https://openapi.programming-hero.com/api/phero-tube/videos?title=${id}`
+  )
+    .then((res) => res.json())
+    .then((data) => showVideo(data.videos))
+    .catch((err) => console.log(err));
+}
+
+const btnStyle = () => {
+  const btns = document.getElementsByClassName("btn");
+  for (let btn of btns) {
+    btn.classList.remove("active");
+  }
+};
+
+const loadCategoryVideo = (id) => {
+  fetch(`https://openapi.programming-hero.com/api/phero-tube/category/${id}`)
+    .then((res) => res.json())
+    .then((data) => showVideo(data.category))
+    .catch((err) => console.log(err));
+  // Add btn active style
+  btnStyle();
+  const btn = document.getElementById(id);
+  btn.classList.add("active");
+};
+
+// button
 
 const showCategory = (items) => {
   items.forEach((element) => {
     const button = document.createElement("div");
     button.innerHTML = `
-    <button class="btn btn-outline">${element.category}</button>
+    <button id=${element.category_id} onclick=loadCategoryVideo(${element.category_id})  class="btn btn-outline ">${element.category}</button>
     `;
     // console.log(element.category);
     btnCategory.appendChild(button);
   });
 };
 
+// button
+
 const showVideo = (items) => {
+  videoContainer.innerHTML = "";
   items.forEach((element) => {
     const videoCard = document.createElement("div");
     videoCard.innerHTML = `
@@ -65,6 +96,10 @@ const showVideo = (items) => {
     // console.log(element);
   });
 };
+
+document.getElementById("search").addEventListener("keyup", (e) => {
+  searchVides(e.target.value);
+});
 
 loadCategory();
 loadVides();
